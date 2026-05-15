@@ -4,70 +4,163 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Shift Manager | Portfolio</title>
+    <title>Portfolio | 髙山晏慈</title>
     <meta
       name="description"
-      content="ケータリング現場向けのシフト管理アプリ Shift Manager のポートフォリオページです。"
+      content="髙山晏慈のポートフォリオサイトです。Webアプリケーション開発の成果物、設計意図、使用技術を掲載しています。"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <header class="site-header">
       <div class="container header-inner">
-        <div class="logo">Shift Manager</div>
+        <a class="logo" href="#">Anji Takayama</a>
 
         <nav class="nav">
-          <a href="#about">概要</a>
-          <a href="#features">機能</a>
-          <a href="#design">設計</a>
-          <a href="#tech">技術</a>
+          <a href="#profile">プロフィール</a>
+          <a href="#projects">成果物</a>
+          <a href="#featured">注力プロジェクト</a>
+          <a href="#skills">技術</a>
           <a href="#links">リンク</a>
         </nav>
       </div>
     </header>
 
     <main>
+      <!-- Hero -->
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-content">
-            <p class="eyebrow">Portfolio Project</p>
+            <p class="eyebrow">Portfolio</p>
 
             <h1>
-              ケータリング現場向けの<br />
-              シフト管理アプリ
+              数学的な構造理解を活かして、<br />
+              Webアプリケーションを設計・実装しています。
             </h1>
 
             <p class="hero-text">
-              Shift Manager
-              は、日付ごとに案件が発生し、案件ごとに勤務時間・必要人数・担当者が変わる
-              ケータリング現場を想定して作成したシフト管理アプリです。
+              横浜国立大学 理工学部 数理科学EPで数学を学びながら、 Next.js /
+              TypeScript / Prisma / PostgreSQL を中心に、
+              業務課題を想定したWebアプリケーション開発に取り組んでいます。
             </p>
 
             <div class="hero-actions">
+              <a class="button primary" href="#projects"> 成果物を見る </a>
+
               <a
-                class="button primary"
-                href="https://github.com/Anji0358/shift-manager"
+                class="button secondary"
+                href="https://github.com/Anji0358"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 GitHubを見る
               </a>
-
-              <a
-                class="button secondary"
-                href="https://shift-manager-9l9hmdel0-anji0358s-projects.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                デモを見る
-              </a>
             </div>
           </div>
 
-          <div class="hero-card">
-            <div class="app-preview">
+          <aside class="hero-card profile-summary-card">
+            <p class="card-label">Current Focus</p>
+            <h2>Shift Manager</h2>
+            <p>
+              ケータリング現場向けのシフト管理アプリ。
+              案件・勤務枠・従業員・割当を分離し、現場の業務構造に合わせて設計しました。
+            </p>
+
+            <div class="mini-tech-list">
+              <span>Next.js</span>
+              <span>TypeScript</span>
+              <span>Prisma</span>
+              <span>PostgreSQL</span>
+              <span>Vercel</span>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Profile -->
+      <section id="profile" class="section profile-section">
+        <div class="container profile-layout">
+          <div class="profile-main">
+            <p class="section-label">Profile</p>
+            <h2>作り手について</h2>
+
+            <p class="profile-lead">
+              数学で培った「構造を整理し、正しさを説明する姿勢」を、
+              Webアプリケーション開発に活かしています。
+            </p>
+
+            <p>
+              私は横浜国立大学 理工学部 数理科学EPで数学を学んでいます。
+              数学では、定義に戻って対象を整理し、論理的に一貫した説明を行うことを重視してきました。
+            </p>
+
+            <p>
+              アプリ開発においても、画面を作るだけではなく、
+              要件整理、データ設計、責務分離、保守性を意識した実装を重視しています。
+              現在は、実際の業務課題を想定した個人開発を通じて、
+              設計から実装・デプロイまでを経験しています。
+            </p>
+          </div>
+
+          <aside class="profile-card">
+            <div class="profile-name">
+              <span class="profile-avatar">A</span>
+              <div>
+                <h3>髙山 晏慈</h3>
+                <p>Mathematics / Web Application Development</p>
+              </div>
+            </div>
+
+            <dl class="profile-info">
+              <div>
+                <dt>所属</dt>
+                <dd>横浜国立大学 理工学部 数理科学EP</dd>
+              </div>
+
+              <div>
+                <dt>関心領域</dt>
+                <dd>Webアプリケーション設計 / DB設計 / 業務改善</dd>
+              </div>
+
+              <div>
+                <dt>現在の技術</dt>
+                <dd>Next.js / TypeScript / Prisma / PostgreSQL</dd>
+              </div>
+
+              <div>
+                <dt>開発で重視すること</dt>
+                <dd>要件整理・責務分離・保守性・実用性</dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects" class="section">
+        <div class="container">
+          <p class="section-label">Projects</p>
+          <h2>成果物</h2>
+
+          <p class="section-description">
+            これまでに作成したWebアプリケーションを掲載しています。 現在は Shift
+            Manager を中心に掲載し、今後成果物を追加していきます。
+          </p>
+
+          <div id="projects-list" class="projects-grid"></div>
+        </div>
+      </section>
+
+      <!-- Featured Project -->
+      <section id="featured" class="section section-muted">
+        <div class="container">
+          <p class="section-label">Featured Project</p>
+          <h2>Shift Manager</h2>
+
+          <div class="featured-layout">
+            <div class="featured-image">
               <img
                 src="images/shift-manager.png"
                 alt="Shift Managerの画面イメージ"
@@ -81,35 +174,52 @@
                 <small>images/shift-manager.png を追加してください</small>
               </div>
             </div>
+
+            <div class="featured-content">
+              <h3>
+                ケータリング現場向けの案件・勤務枠ベースのシフト管理アプリ
+              </h3>
+
+              <p>
+                ケータリング現場では、一般的な固定シフトとは異なり、
+                案件ごとに勤務場所・勤務時間・必要人数が変わります。
+                そのため、単純な「従業員 × 日付」のカレンダー型ではなく、
+                「案件」「勤務枠」「必要人数」「割当」を分けて管理できる仕組みが必要だと考えました。
+              </p>
+
+              <p>
+                Shift Manager では、自分自身のケータリング業務経験をもとに、
+                「どの案件に何人必要で、現在何人確定しているのか」を把握しやすくすることを目指しました。
+              </p>
+
+              <div class="hero-actions">
+                <a
+                  class="button primary"
+                  href="https://github.com/Anji0358/shift-manager"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub Repository
+                </a>
+
+                <a
+                  class="button secondary"
+                  href="https://shift-manager-git-main-anji0358s-projects.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Live Demo
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="about" class="section">
-        <div class="container two-column">
-          <div>
-            <p class="section-label">About</p>
-            <h2>作成背景</h2>
-          </div>
-
-          <div class="content">
-            <p>
-              ケータリング現場では、一般的な固定シフトとは異なり、案件ごとに勤務場所・勤務時間・必要人数が変わります。
-              そのため、単純な「従業員 × 日付」のカレンダー型ではなく、
-              「案件」「勤務枠」「必要人数」「割当」を分けて管理できる仕組みが必要だと考えました。
-            </p>
-
-            <p>
-              このアプリでは、自分自身のケータリング業務経験をもとに、
-              現場で発生しやすい「どの案件に何人必要で、現在何人確定しているのか」を把握しやすくすることを目指しました。
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="features" class="section section-muted">
+      <!-- Features -->
+      <section class="section">
         <div class="container">
-          <p class="section-label">Features</p>
+          <p class="section-label">Shift Manager Features</p>
           <h2>主な機能</h2>
 
           <div class="feature-grid">
@@ -151,14 +261,15 @@
             <article class="feature-card">
               <h3>管理者向け画面</h3>
               <p>
-                案件・従業員・割当状況を管理者が確認しやすいように、業務管理画面として整理しています。
+                案件・従業員・割当状況を管理者が確認しやすいように整理しています。
               </p>
             </article>
           </div>
         </div>
       </section>
 
-      <section id="design" class="section">
+      <!-- Design -->
+      <section class="section section-muted">
         <div class="container two-column">
           <div>
             <p class="section-label">Design</p>
@@ -176,17 +287,23 @@
                 <strong>Job</strong>
                 <span>案件</span>
               </div>
+
               <div class="model-arrow">↓</div>
+
               <div class="model-item">
                 <strong>JobShiftSlot</strong>
                 <span>勤務枠・必要人数</span>
               </div>
+
               <div class="model-arrow">↓</div>
+
               <div class="model-item">
                 <strong>ShiftAssignment</strong>
                 <span>割当</span>
               </div>
+
               <div class="model-arrow">↓</div>
+
               <div class="model-item">
                 <strong>Employee</strong>
                 <span>従業員</span>
@@ -202,9 +319,10 @@
         </div>
       </section>
 
-      <section id="tech" class="section section-muted">
+      <!-- Skills -->
+      <section id="skills" class="section">
         <div class="container">
-          <p class="section-label">Tech Stack</p>
+          <p class="section-label">Skills</p>
           <h2>使用技術</h2>
 
           <div class="tech-grid">
@@ -234,14 +352,16 @@
                 <li>PostgreSQL</li>
                 <li>Neon</li>
                 <li>Vercel</li>
-                <li>Git / GitHub</li>
+                <li>Git</li>
+                <li>GitHub</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="learning" class="section">
+      <!-- Learning -->
+      <section class="section section-muted">
         <div class="container two-column">
           <div>
             <p class="section-label">Learning</p>
@@ -275,12 +395,14 @@
         </div>
       </section>
 
+      <!-- Links -->
       <section id="links" class="section cta-section">
         <div class="container cta">
           <p class="section-label">Links</p>
           <h2>プロジェクトを見る</h2>
           <p>
-            GitHubではコードとREADMEを確認できます。デモURLでは実際の画面を確認できます。
+            GitHubではコードとREADMEを確認できます。
+            デモURLでは実際の画面を確認できます。
           </p>
 
           <div class="hero-actions center">
@@ -288,13 +410,14 @@
               class="button primary"
               href="https://github.com/Anji0358/shift-manager"
               target="_blank"
-              rel="noopener"
+              rel="noopener noreferrer"
             >
               GitHub Repository
             </a>
+
             <a
               class="button secondary"
-              href="https://shift-manager-9l9hmdel0-anji0358s-projects.vercel.app"
+              href="https://shift-manager-git-main-anji0358s-projects.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -308,10 +431,17 @@
     <footer class="footer">
       <div class="container footer-inner">
         <p>&copy; 2026 髙山晏慈</p>
-        <a href="https://github.com/Anji0358" target="_blank" rel="noopener">
+        <a
+          href="https://github.com/Anji0358"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           GitHub
         </a>
       </div>
     </footer>
+
+    <script src="js/projects.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
