@@ -5,25 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Portfolio | 髙山晏慈</title>
+
     <meta
       name="description"
-      content="髙山晏慈のポートフォリオサイトです。Webアプリケーション開発の成果物、設計意図、使用技術を掲載しています。"
+      content="髙山晏慈のポートフォリオサイトです。ケータリング現場の課題をもとに作成したシフト管理アプリ Shift Manager を中心に、設計意図・使用技術・工夫点を掲載しています。"
     />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
 
   <body>
+    <!-- Header -->
     <header class="site-header">
       <div class="container header-inner">
-        <a class="logo" href="#">Anji Takayama</a>
+        <a class="site-logo" href="#">Anji Takayama</a>
 
-        <nav class="nav">
-          <a href="#profile">プロフィール</a>
-          <a href="#projects">成果物</a>
-          <a href="#featured">注力プロジェクト</a>
-          <a href="#skills">技術</a>
-          <a href="#links">リンク</a>
+        <nav class="global-nav" aria-label="グローバルナビゲーション">
+          <a href="#profile">Profile</a>
+          <a href="#project">Project</a>
+          <a href="#background">Background</a>
+          <a href="#features">Features</a>
+          <a href="#design">Design</a>
+          <a href="#skills">Skills</a>
+          <a href="#links">Links</a>
         </nav>
       </div>
     </header>
@@ -31,26 +35,28 @@
     <main>
       <!-- Hero -->
       <section class="hero">
-        <div class="container hero-grid">
+        <div class="container hero-layout">
           <div class="hero-content">
-            <p class="eyebrow">Portfolio</p>
+            <p class="section-label">Portfolio</p>
 
             <h1>
               数学的な構造理解を活かして、<br />
-              Webアプリケーションを設計・実装しています。
+              業務課題を解決するWebアプリを設計・実装しています。
             </h1>
 
-            <p class="hero-text">
-              横浜国立大学 理工学部 数理科学EPで数学を学びながら、 Next.js /
-              TypeScript / Prisma / PostgreSQL を中心に、
-              業務課題を想定したWebアプリケーション開発に取り組んでいます。
+            <p class="hero-description">
+              横浜国立大学 理工学部 数理科学EPで数学を学びながら、java / spring
+              boot / Next.js / TypeScript / Prisma / PostgreSQL を用いた
+              Webアプリケーション開発に取り組んでいます。
             </p>
 
             <div class="hero-actions">
-              <a class="button primary" href="#projects"> 成果物を見る </a>
+              <a class="button button-primary" href="#project">
+                注力プロジェクトを見る
+              </a>
 
               <a
-                class="button secondary"
+                class="button button-secondary"
                 href="https://github.com/Anji0358"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -60,15 +66,16 @@
             </div>
           </div>
 
-          <aside class="hero-card profile-summary-card">
-            <p class="card-label">Current Focus</p>
+          <aside class="hero-card">
+            <p class="card-label">Featured Project</p>
             <h2>Shift Manager</h2>
             <p>
-              ケータリング現場向けのシフト管理アプリ。
-              案件・勤務枠・従業員・割当を分離し、現場の業務構造に合わせて設計しました。
+              ケータリング現場向けのシフト管理アプリです。
+              案件ごとに勤務場所・勤務時間・必要人数が変わる業務構造に対応するため、
+              案件・勤務枠・従業員・割当を分けて設計しました。
             </p>
 
-            <div class="mini-tech-list">
+            <div class="tag-list">
               <span>Next.js</span>
               <span>TypeScript</span>
               <span>Prisma</span>
@@ -80,15 +87,17 @@
       </section>
 
       <!-- Profile -->
-      <section id="profile" class="section profile-section">
-        <div class="container profile-layout">
-          <div class="profile-main">
+      <section id="profile" class="section section-white">
+        <div class="container two-column">
+          <div>
             <p class="section-label">Profile</p>
             <h2>作り手について</h2>
+          </div>
 
-            <p class="profile-lead">
-              数学で培った「構造を整理し、正しさを説明する姿勢」を、
-              Webアプリケーション開発に活かしています。
+          <div class="content">
+            <p class="lead">
+              数学で培った「対象を構造化して理解する力」を、
+              Webアプリケーションの要件整理・データ設計・実装に活かしています。
             </p>
 
             <p>
@@ -97,104 +106,72 @@
             </p>
 
             <p>
-              アプリ開発においても、画面を作るだけではなく、
-              要件整理、データ設計、責務分離、保守性を意識した実装を重視しています。
-              現在は、実際の業務課題を想定した個人開発を通じて、
-              設計から実装・デプロイまでを経験しています。
+              アプリケーション開発でも、画面を作るだけではなく、
+              「どのような業務課題を解決するのか」「どのデータをどの責務に分けるべきか」
+              を考えながら設計・実装することを意識しています。
             </p>
-          </div>
 
-          <aside class="profile-card">
-            <div class="profile-name">
-              <span class="profile-avatar">A</span>
-              <div>
-                <h3>髙山 晏慈</h3>
-                <p>Mathematics / Web Application Development</p>
+            <div class="profile-grid">
+              <div class="profile-item">
+                <span>所属</span>
+                <strong>横浜国立大学 理工学部 数理科学EP</strong>
+              </div>
+
+              <div class="profile-item">
+                <span>関心領域</span>
+                <strong>Webアプリ設計 / DB設計 / 業務改善</strong>
+              </div>
+
+              <div class="profile-item">
+                <span>現在の技術</span>
+                <strong
+                  >java / spring boot / Next.js / TypeScript / Prisma /
+                  PostgreSQL</strong
+                >
+              </div>
+
+              <div class="profile-item">
+                <span>開発で重視すること</span>
+                <strong>要件整理・責務分離・保守性・実用性</strong>
               </div>
             </div>
-
-            <dl class="profile-info">
-              <div>
-                <dt>所属</dt>
-                <dd>横浜国立大学 理工学部 数理科学EP</dd>
-              </div>
-
-              <div>
-                <dt>関心領域</dt>
-                <dd>Webアプリケーション設計 / DB設計 / 業務改善</dd>
-              </div>
-
-              <div>
-                <dt>現在の技術</dt>
-                <dd>Next.js / TypeScript / Prisma / PostgreSQL</dd>
-              </div>
-
-              <div>
-                <dt>開発で重視すること</dt>
-                <dd>要件整理・責務分離・保守性・実用性</dd>
-              </div>
-            </dl>
-          </aside>
-        </div>
-      </section>
-
-      <!-- Projects -->
-      <section id="projects" class="section">
-        <div class="container">
-          <p class="section-label">Projects</p>
-          <h2>成果物</h2>
-
-          <p class="section-description">
-            これまでに作成したWebアプリケーションを掲載しています。 現在は Shift
-            Manager を中心に掲載し、今後成果物を追加していきます。
-          </p>
-
-          <div id="projects-list" class="projects-grid"></div>
+          </div>
         </div>
       </section>
 
       <!-- Featured Project -->
-      <section id="featured" class="section section-muted">
+      <section id="project" class="section">
         <div class="container">
           <p class="section-label">Featured Project</p>
           <h2>Shift Manager</h2>
 
-          <div class="featured-layout">
-            <div class="featured-image">
+          <div class="project-layout">
+            <div class="project-image">
               <img
-                src="images/shift-manager.png"
+                src="./images/shift-manager.png"
                 alt="Shift Managerの画面イメージ"
-                onerror="
-                  this.style.display = 'none';
-                  this.nextElementSibling.style.display = 'flex';
-                "
               />
-              <div class="placeholder">
-                <span>Shift Manager Screenshot</span>
-                <small>images/shift-manager.png を追加してください</small>
-              </div>
             </div>
 
-            <div class="featured-content">
+            <div class="project-content">
               <h3>
                 ケータリング現場向けの案件・勤務枠ベースのシフト管理アプリ
               </h3>
 
               <p>
-                ケータリング現場では、一般的な固定シフトとは異なり、
-                案件ごとに勤務場所・勤務時間・必要人数が変わります。
-                そのため、単純な「従業員 × 日付」のカレンダー型ではなく、
-                「案件」「勤務枠」「必要人数」「割当」を分けて管理できる仕組みが必要だと考えました。
+                Shift Managerは、ケータリング現場のように
+                「案件ごとに勤務場所・勤務時間・必要人数が変わる」業務に対応するための
+                シフト管理アプリです。
               </p>
 
               <p>
-                Shift Manager では、自分自身のケータリング業務経験をもとに、
-                「どの案件に何人必要で、現在何人確定しているのか」を把握しやすくすることを目指しました。
+                一般的な固定シフトではなく、案件、勤務枠、必要人数、従業員、割当を分離して管理することで、
+                現場の運用に近い形でシフトを扱えるようにすることを目指しました。
               </p>
 
-              <div class="hero-actions">
+              <div class="button-group">
                 <a
-                  class="button primary"
+                  class="button button-primary"
                   href="https://github.com/Anji0358/shift-manager"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -203,7 +180,7 @@
                 </a>
 
                 <a
-                  class="button secondary"
+                  class="button button-secondary"
                   href="https://shift-manager-one-puce.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -216,60 +193,129 @@
         </div>
       </section>
 
-      <!-- Features -->
+      <!-- Background -->
+      <section id="background" class="section section-white">
+        <div class="container two-column">
+          <div>
+            <p class="section-label">Background</p>
+            <h2>作成背景</h2>
+          </div>
+
+          <div class="content">
+            <p class="lead">
+              このアプリは、ケータリング現場での実際の業務経験をもとに作成しました。
+            </p>
+
+            <p>
+              ケータリングの仕事では、毎回同じ店舗で同じ時間に働くわけではありません。
+              案件ごとに勤務場所、集合場所、勤務時間、必要人数、担当者が変わります。
+            </p>
+
+            <p>
+              そのため、一般的な店舗シフトのように
+              「曜日ごとに誰が入るか」を管理するだけでは不十分です。
+              現場では、案件ごとに何人必要で、現在何人が確定していて、
+              どの時間帯が不足しているのかを素早く把握する必要があります。
+            </p>
+
+            <p>
+              そこで、案件単位で勤務枠と割当状況を管理できるアプリとして Shift
+              Managerを開発しました。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Problems & Solutions -->
       <section class="section">
         <div class="container">
-          <p class="section-label">Shift Manager Features</p>
-          <h2>主な機能</h2>
+          <p class="section-label">Problems & Solutions</p>
+          <h2>解決したい課題</h2>
 
-          <div class="feature-grid">
-            <article class="feature-card">
-              <h3>案件管理</h3>
+          <div class="problem-grid">
+            <article class="problem-card">
+              <span class="problem-number">01</span>
+              <h3>案件ごとに勤務条件が変わる</h3>
               <p>
-                日付・勤務場所・案件名などを登録し、月ごとの案件一覧として管理できます。
+                ケータリングでは案件ごとに場所・時間・必要人数が異なるため、
+                固定シフト型の管理では対応しにくい課題があります。
               </p>
+              <strong>
+                JobとJobShiftSlotを分離し、1つの案件に複数の勤務枠を持たせる設計にしました。
+              </strong>
             </article>
 
-            <article class="feature-card">
-              <h3>勤務枠管理</h3>
+            <article class="problem-card">
+              <span class="problem-number">02</span>
+              <h3>人員の充足状況が分かりにくい</h3>
               <p>
-                1つの案件に対して、複数の勤務時間帯や必要人数を設定できるようにしています。
+                必要人数に対して、現在何人が確定しているのかをすぐに把握できないと、
+                管理者の確認コストが大きくなります。
               </p>
+              <strong>
+                必要人数と割当人数を比較し、案件ごとの充足率を確認できるようにしました。
+              </strong>
             </article>
 
-            <article class="feature-card">
-              <h3>従業員管理</h3>
+            <article class="problem-card">
+              <span class="problem-number">03</span>
+              <h3>管理者とスタッフで必要な情報が違う</h3>
               <p>
-                従業員情報、勤務状態、役割などを管理し、シフト割当に利用できます。
+                管理者は全体の割当状況を確認したい一方で、スタッフは自分の勤務予定を確認できれば十分です。
               </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>シフト割当</h3>
-              <p>
-                案件の勤務枠に対して従業員を割り当て、担当者を管理できます。
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>充足率表示</h3>
-              <p>
-                必要人数に対して現在何人が確定しているかを表示し、人員不足を把握しやすくします。
-              </p>
-            </article>
-
-            <article class="feature-card">
-              <h3>管理者向け画面</h3>
-              <p>
-                案件・従業員・割当状況を管理者が確認しやすいように整理しています。
-              </p>
+              <strong>
+                ロールに応じて管理画面とスタッフ画面を分ける設計を意識しました。
+              </strong>
             </article>
           </div>
         </div>
       </section>
 
+      <!-- Features -->
+      <section id="features" class="section section-white">
+        <div class="container">
+          <p class="section-label">Features</p>
+          <h2>主な機能</h2>
+
+          <div class="feature-groups">
+            <section class="feature-group">
+              <h3>管理者向け機能</h3>
+              <ul>
+                <li>案件の登録・編集・削除</li>
+                <li>勤務枠と必要人数の管理</li>
+                <li>従業員情報の管理</li>
+                <li>勤務枠ごとのシフト割当</li>
+                <li>月別の案件一覧表示</li>
+                <li>必要人数に対する充足率の表示</li>
+              </ul>
+            </section>
+
+            <section class="feature-group">
+              <h3>スタッフ向け機能</h3>
+              <ul>
+                <li>自分のシフト確認</li>
+                <li>月ごとの勤務予定確認</li>
+                <li>勤務不可情報の登録</li>
+                <li>勤務報告の提出</li>
+              </ul>
+            </section>
+
+            <section class="feature-group">
+              <h3>共通機能</h3>
+              <ul>
+                <li>ログイン機能</li>
+                <li>権限に応じた画面表示</li>
+                <li>レスポンシブ対応</li>
+                <li>ページ遷移時のローディング表示</li>
+                <li>ボタン操作時のフィードバック表示</li>
+              </ul>
+            </section>
+          </div>
+        </div>
+      </section>
+
       <!-- Design -->
-      <section class="section section-muted">
+      <section id="design" class="section">
         <div class="container two-column">
           <div>
             <p class="section-label">Design</p>
@@ -277,44 +323,91 @@
           </div>
 
           <div class="content">
-            <p>
-              このアプリでは、シフトを単なる予定表として扱うのではなく、
-              ケータリング現場の業務構造に合わせてデータを分離しました。
+            <p class="lead">
+              現場の業務構造に合わせて、データモデルを分離しました。
             </p>
 
-            <div class="model-box">
-              <div class="model-item">
-                <strong>Job</strong>
-                <span>案件</span>
+            <p>
+              Shift Managerでは、シフトを単なる予定表として扱うのではなく、
+              「案件」「勤務枠」「従業員」「割当」という単位に分けて管理しています。
+            </p>
+
+            <div class="model-flow">
+              <div class="model-card">
+                <span>Job</span>
+                <strong>案件</strong>
+                <p>案件名、日付、場所、メモなどを管理</p>
               </div>
 
               <div class="model-arrow">↓</div>
 
-              <div class="model-item">
-                <strong>JobShiftSlot</strong>
-                <span>勤務枠・必要人数</span>
+              <div class="model-card">
+                <span>JobShiftSlot</span>
+                <strong>勤務枠</strong>
+                <p>勤務時間帯、必要人数を管理</p>
               </div>
 
               <div class="model-arrow">↓</div>
 
-              <div class="model-item">
-                <strong>ShiftAssignment</strong>
-                <span>割当</span>
+              <div class="model-card">
+                <span>ShiftAssignment</span>
+                <strong>割当</strong>
+                <p>勤務枠に対して従業員を割り当てる</p>
               </div>
 
               <div class="model-arrow">↓</div>
 
-              <div class="model-item">
-                <strong>Employee</strong>
-                <span>従業員</span>
+              <div class="model-card">
+                <span>Employee</span>
+                <strong>従業員</strong>
+                <p>名前、役割、勤務状態などを管理</p>
               </div>
             </div>
 
             <p>
-              このように分けることで、1つの案件に複数の勤務時間帯がある場合や、
-              勤務枠ごとに必要人数が異なる場合にも対応できます。
-              また、必要人数と割当人数を比較することで、案件ごとの充足率を表示できるようにしました。
+              このように責務を分けることで、1つの案件に複数の勤務時間帯がある場合や、
+              勤務枠ごとに必要人数が異なる場合にも対応しやすくなります。
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Screens -->
+      <section class="section section-white">
+        <div class="container">
+          <p class="section-label">Screens</p>
+          <h2>画面一覧</h2>
+
+          <div class="screen-grid">
+            <article class="screen-card">
+              <h3>ログイン画面</h3>
+              <p>管理者・スタッフがログインするための画面です。</p>
+            </article>
+
+            <article class="screen-card">
+              <h3>管理者ダッシュボード</h3>
+              <p>案件数、割当状況、確認が必要な情報を把握する画面です。</p>
+            </article>
+
+            <article class="screen-card">
+              <h3>案件一覧画面</h3>
+              <p>月ごとの案件、勤務場所、必要人数、充足状況を確認します。</p>
+            </article>
+
+            <article class="screen-card">
+              <h3>案件詳細画面</h3>
+              <p>案件ごとの勤務枠、担当者、メモ、集合場所を確認します。</p>
+            </article>
+
+            <article class="screen-card">
+              <h3>従業員管理画面</h3>
+              <p>従業員情報、役割、勤務状態を管理します。</p>
+            </article>
+
+            <article class="screen-card">
+              <h3>スタッフ用シフト確認画面</h3>
+              <p>スタッフが自分の勤務予定を確認する画面です。</p>
+            </article>
           </div>
         </div>
       </section>
@@ -322,11 +415,11 @@
       <!-- Skills -->
       <section id="skills" class="section">
         <div class="container">
-          <p class="section-label">Skills</p>
+          <p class="section-label">Tech Stack</p>
           <h2>使用技術</h2>
 
-          <div class="tech-grid">
-            <div class="tech-group">
+          <div class="skill-grid">
+            <div class="skill-card">
               <h3>Frontend</h3>
               <ul>
                 <li>Next.js</li>
@@ -337,16 +430,17 @@
               </ul>
             </div>
 
-            <div class="tech-group">
+            <div class="skill-card">
               <h3>Backend</h3>
               <ul>
                 <li>Next.js Server Actions</li>
                 <li>Next.js Route Handlers</li>
+                <li>Auth.js</li>
                 <li>Prisma</li>
               </ul>
             </div>
 
-            <div class="tech-group">
+            <div class="skill-card">
               <h3>Database / Deploy</h3>
               <ul>
                 <li>PostgreSQL</li>
@@ -360,36 +454,49 @@
         </div>
       </section>
 
-      <!-- Learning -->
-      <section class="section section-muted">
+      <!-- Security -->
+      <section class="section section-white">
         <div class="container two-column">
           <div>
-            <p class="section-label">Learning</p>
-            <h2>この開発で意識したこと</h2>
+            <p class="section-label">Security</p>
+            <h2>セキュリティ面の配慮</h2>
           </div>
 
           <div class="content">
-            <ul class="learning-list">
-              <li>
-                <strong>業務構造を先に整理すること</strong>
-                <span>
-                  画面から作り始めるのではなく、案件・勤務枠・従業員・割当というデータ構造を先に整理しました。
-                </span>
-              </li>
+            <ul class="check-list">
+              <li>ログイン機能による未認証ユーザーのアクセス制限</li>
+              <li>管理者・スタッフのロールに応じた画面分離</li>
+              <li>Server Actions実行時にも権限確認を行う設計</li>
+              <li>パスワードを平文保存せず、ハッシュ化して扱う設計</li>
+              <li>データベースURLや認証シークレットを環境変数で管理</li>
+              <li>画面上の表示制御だけに依存しない認可処理</li>
+            </ul>
 
-              <li>
-                <strong>現場の課題に合わせて設計すること</strong>
-                <span>
-                  自分のケータリング業務経験をもとに、通常の店舗シフトとは異なる案件ベースの管理を意識しました。
-                </span>
-              </li>
+            <p>
+              セキュリティについては、見た目上の表示制御だけでなく、
+              サーバー側でも認証・認可を確認することを重視しています。
+            </p>
+          </div>
+        </div>
+      </section>
 
-              <li>
-                <strong>拡張しやすい構造にすること</strong>
-                <span>
-                  今後、勤務不可情報、給与計算、出勤実績、管理者権限などを追加できるように、責務を分けて実装しています。
-                </span>
-              </li>
+      <!-- Future -->
+      <section class="section">
+        <div class="container two-column">
+          <div>
+            <p class="section-label">Future</p>
+            <h2>今後の改善点</h2>
+          </div>
+
+          <div class="content">
+            <ul class="check-list">
+              <li>スマートフォンでの操作性をさらに改善する</li>
+              <li>カレンダーで確定・未確定のシフトを色分けする</li>
+              <li>集合場所をGoogle Mapsリンクで確認できるようにする</li>
+              <li>勤務報告から月次給与計算につなげる</li>
+              <li>Excel出力機能を追加する</li>
+              <li>フォームのバリデーションとエラーハンドリングを強化する</li>
+              <li>テストコードを追加し、保守性を高める</li>
             </ul>
           </div>
         </div>
@@ -397,40 +504,44 @@
 
       <!-- Links -->
       <section id="links" class="section cta-section">
-        <div class="container cta">
-          <p class="section-label">Links</p>
-          <h2>プロジェクトを見る</h2>
-          <p>
-            GitHubではコードとREADMEを確認できます。
-            デモURLでは実際の画面を確認できます。
-          </p>
+        <div class="container">
+          <div class="cta-card">
+            <p class="section-label">Links</p>
+            <h2>プロジェクトを見る</h2>
+            <p>
+              GitHubではコードとREADMEを確認できます。
+              デモURLでは実際の画面を確認できます。
+            </p>
 
-          <div class="hero-actions center">
-            <a
-              class="button primary"
-              href="https://github.com/Anji0358/shift-manager"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub Repository
-            </a>
+            <div class="button-group center">
+              <a
+                class="button button-primary"
+                href="https://github.com/Anji0358/shift-manager"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub Repository
+              </a>
 
-            <a
-              class="button secondary"
-              href="https://shift-manager-one-puce.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Live Demo
-            </a>
+              <a
+                class="button button-secondary dark"
+                href="https://shift-manager-one-puce.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Live Demo
+              </a>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="footer">
+    <!-- Footer -->
+    <footer class="site-footer">
       <div class="container footer-inner">
         <p>&copy; 2026 髙山晏慈</p>
+
         <a
           href="https://github.com/Anji0358"
           target="_blank"
@@ -441,7 +552,6 @@
       </div>
     </footer>
 
-    <script src="js/projects.js"></script>
-    <script src="js/main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
