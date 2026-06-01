@@ -240,61 +240,67 @@
           <div class="problem-grid">
             <article class="problem-card">
               <span class="problem-number">01</span>
-              <h3>個別連絡に依存したシフト調整</h3>
+              <h3>案件ごとに条件が異なる</h3>
               <p>
-                <!-- TODO: 個別連絡の負担について書く -->
-                スタッフ一人ひとりに連絡し、返信を確認しながら調整する必要があるため、
-                人数が増えるほど管理負担が大きくなります。
+                ケータリングでは、案件ごとに現場、集合場所、勤務時間、必要人数、服装、持ち物、注意事項などが変わります。
+                さらに、当日の進行によって就労時間が前後することもあるため、固定的なシフト表だけでは情報を整理しきれないという課題があります。
               </p>
             </article>
 
             <article class="problem-card">
               <span class="problem-number">02</span>
-              <h3>案件ごとに条件が異なる</h3>
+              <h3>情報が複数ツールに分散している</h3>
               <p>
-                <!-- TODO: 案件ごとの場所・時間・必要人数の違いを書く -->
-                勤務場所、集合場所、勤務時間、必要人数が案件ごとに異なるため、
-                固定シフト表では管理しにくい構造があります。
+                現状では、LINE、Excel、スプレッドシート、カレンダーなど複数のアプリケーションを使い分けて管理する必要があります。
+                そのため、案件情報、スタッフ情報、シフト状況、連絡内容が分散しやすく、確認漏れや二重管理が起きやすくなります。
               </p>
             </article>
 
             <article class="problem-card">
               <span class="problem-number">03</span>
-              <h3>勤務不可情報との照合が難しい</h3>
+              <h3>スタッフ割当の負担が大きい</h3>
               <p>
-                <!-- TODO: NG日と案件候補の照合について書く -->
-                スタッフの勤務不可日と案件の日程を照合しながら候補者を探す作業には手間がかかります。
+                案件ごとに必要人数を確認し、スタッフの予定や勤務不可情報を見ながら割り当てる必要があります。
+                人数が増えるほど、誰が入れるのか、どの案件が人員不足なのかを把握する負担が大きくなります。
               </p>
             </article>
 
             <article class="problem-card">
               <span class="problem-number">04</span>
-              <h3>人員の充足状況が見えにくい</h3>
+              <h3>毎回の入力・連絡作成に手間がかかる</h3>
               <p>
-                <!-- TODO: 必要人数と割当人数の把握について書く -->
-                必要人数に対して何人確定しているのかが分かりにくいと、
-                人員不足の案件を見落とす可能性があります。
+                似たような案件でも、勤務場所、集合場所、勤務時間、持ち物、連絡文などを毎回入力・作成する必要があります。
+                手作業が多いと時間がかかるだけでなく、入力漏れや連絡内容のばらつきも起きやすくなります。
               </p>
             </article>
+          </div>
+        </div>
+      </section>
 
-            <article class="problem-card">
-              <span class="problem-number">05</span>
-              <h3>就労報告・月次集計が分散しやすい</h3>
-              <p>
-                <!-- TODO: 報告・集計の課題を書く -->
-                勤務後の報告や月ごとの集計が別々に管理されると、
-                確認漏れや集計ミスが起きやすくなります。
-              </p>
-            </article>
+      <!-- Before / After -->
+      <section id="before-after" class="section before-after-section">
+        <div class="container">
+          <div class="section-heading-center">
+            <p class="section-label">Before / After</p>
+            <h2>情報管理の一元化</h2>
 
-            <article class="problem-card">
-              <span class="problem-number">06</span>
-              <h3>連絡文の作成が手作業になる</h3>
-              <p>
-                <!-- TODO: LINEメッセージ生成機能につながる課題を書く -->
-                案件ごとに勤務時間、集合場所、持ち物などを整理して連絡文を作る作業には時間がかかります。
-              </p>
-            </article>
+            <p class="lead">
+              LINE、Excel、スプレッドシート、カレンダーなどに分散していた情報を、
+              Shift Manager上で案件単位に整理できるようにしました。
+            </p>
+
+            <p>
+              ケータリング現場では、案件ごとに勤務場所・勤務時間・必要人数・持ち物・注意事項が変わります。
+              それらの情報を案件・勤務枠・スタッフ割当・就労報告としてまとめることで、
+              管理者が状況を把握しやすく、スタッフも自分に必要な情報を確認しやすい構成にしています。
+            </p>
+          </div>
+
+          <div class="before-after-visual">
+            <img
+              src="./images/before-after.png"
+              alt="Shift Manager導入前後の情報管理の比較図"
+            />
           </div>
         </div>
       </section>
@@ -307,50 +313,38 @@
 
           <div class="solution-grid">
             <article class="solution-card">
-              <h3>案件・勤務枠・割当の分離</h3>
+              <span class="solution-number">01</span>
+              <h3>案件単位で情報を整理</h3>
               <p>
-                <!-- TODO: Job / JobShiftSlot / ShiftAssignment の設計を書く -->
-                案件と勤務時間帯を分けて管理し、勤務枠単位でスタッフを割り当てられるようにしました。
+                案件ごとに異なる現場、集合場所、勤務時間、必要人数、服装、持ち物、注意事項を登録できるようにしました。
+                さらに、案件と勤務枠を分けることで、1つの案件に複数の勤務時間帯を設定できる構成にしています。
               </p>
             </article>
 
             <article class="solution-card">
-              <h3>勤務不可情報の管理</h3>
+              <span class="solution-number">02</span>
+              <h3>シフト管理情報を一元化</h3>
               <p>
-                <!-- TODO: スタッフのNG日管理について書く -->
-                スタッフが勤務不可情報を登録できるようにし、管理者が候補者を判断しやすい構成にしました。
+                LINE、Excel、スプレッドシート、カレンダーなどに分散しやすい情報を、アプリ内でまとめて確認できるようにしました。
+                案件情報、スタッフ情報、勤務枠、割当状況、就労報告を同じ流れで扱えるようにしています。
               </p>
             </article>
 
             <article class="solution-card">
-              <h3>充足率の表示</h3>
+              <span class="solution-number">03</span>
+              <h3>割当状況を判断しやすく</h3>
               <p>
-                <!-- TODO: 必要人数と割当人数の比較を書く -->
-                必要人数と割当済み人数を比較し、人員不足の案件を把握しやすくしました。
+                勤務枠ごとに必要人数と割当済み人数を確認できるようにし、人員不足の案件を把握しやすくしました。
+                また、スタッフの勤務不可情報を管理することで、候補者を判断しながら割当を行えるようにしています。
               </p>
             </article>
 
             <article class="solution-card">
-              <h3>就労報告と月次集計</h3>
+              <span class="solution-number">04</span>
+              <h3>繰り返し作業を削減</h3>
               <p>
-                <!-- TODO: 勤務後の報告・集計について書く -->
-                スタッフが勤務後に報告を提出し、管理者が月ごとに確認できる流れを作りました。
-              </p>
-            </article>
-
-            <article class="solution-card">
-              <h3>LINEメッセージ生成</h3>
-              <p>
-                <!-- TODO: グループ向け・個人向けメッセージ生成について書く -->
-                案件情報をもとに、スタッフへ送る連絡文を生成できる機能を追加しました。
-              </p>
-            </article>
-
-            <article class="solution-card">
-              <h3>テンプレート機能</h3>
-              <p>
-                <!-- TODO: 案件テンプレートによる入力負荷軽減を書く -->
-                繰り返し発生する案件の情報を再利用できるようにし、案件作成の入力負荷を減らしました。
+                似たような案件を毎回入力する負担を減らすために、案件テンプレート機能を用意しました。
+                また、案件情報をもとにLINE連絡文を生成できるようにし、連絡文作成の手間や入力漏れを減らすことを目指しました。
               </p>
             </article>
           </div>
@@ -407,82 +401,128 @@
       </section>
 
       <!-- Architecture / Design -->
-      <section id="architecture" class="section section-white">
-        <div class="container two-column">
-          <div>
+      <section
+        id="architecture"
+        class="section section-white architecture-section"
+      >
+        <div class="container architecture-container">
+          <div class="section-heading-center">
             <p class="section-label">Architecture</p>
             <h2>設計上の工夫</h2>
-          </div>
 
-          <div class="content">
             <p class="lead">
-              <!-- TODO: 設計全体の方針を書く -->
-              シフトを単なる予定表として扱うのではなく、
-              案件・勤務枠・割当・従業員という単位に分けて管理する設計にしました。
+              Shift Managerでは、シフトを単なる予定表として扱うのではなく、
+              ケータリング現場の流動的な業務に合わせて、案件・勤務枠・割当・従業員・就労報告を分けて管理する設計にしました。
             </p>
 
-            <div class="model-flow">
-              <div class="model-card">
-                <span>Job</span>
-                <strong>案件</strong>
-                <p>案件名、日付、勤務場所、集合場所、備考などを管理</p>
+            <p>
+              案件ごとに現場、勤務時間、必要人数、持ち物、注意事項が変わるため、
+              1つのデータにすべてをまとめるのではなく、役割ごとにモデルを分けています。
+              これにより、勤務枠単位でのスタッフ割当や、勤務後の実績管理まで扱いやすい構成にしています。
+            </p>
+          </div>
+
+          <div class="architecture-content">
+            <div class="architecture-visual-block">
+              <div class="visual-heading">
+                <span>ER Diagram</span>
+                <h3>案件・勤務枠・割当を中心にしたデータ設計</h3>
+                <p>
+                  Jobを案件全体、JobShiftSlotを勤務時間帯、ShiftAssignmentを勤務枠と従業員をつなぐ割当として分け、
+                  ケータリング現場の複数勤務枠・必要人数管理に対応できるようにしました。
+                </p>
               </div>
 
-              <div class="model-arrow">↓</div>
-
-              <div class="model-card">
-                <span>JobShiftSlot</span>
-                <strong>勤務枠</strong>
-                <p>勤務時間帯、休憩時間、必要人数を管理</p>
-              </div>
-
-              <div class="model-arrow">↓</div>
-
-              <div class="model-card">
-                <span>ShiftAssignment</span>
-                <strong>勤務割当</strong>
-                <p>どの勤務枠にどの従業員が入るかを管理</p>
-              </div>
-
-              <div class="model-arrow">↓</div>
-
-              <div class="model-card">
-                <span>Employee</span>
-                <strong>従業員</strong>
-                <p>名前、役割、時給、在籍状態、勤務不可情報を管理</p>
+              <div class="architecture-visual">
+                <img
+                  src="./images/architecture-er.png"
+                  alt="Shift ManagerのER図"
+                />
               </div>
             </div>
 
-            <div class="design-points">
-              <div class="design-point">
-                <h3>データ設計</h3>
+            <div class="architecture-visual-block">
+              <div class="visual-heading">
+                <span>Workflow</span>
+                <h3>案件作成から就労報告までの業務フロー</h3>
                 <p>
-                  <!-- TODO: Job / JobShiftSlot / ShiftAssignment / Employee などの関係を書く -->
-                  案件と勤務枠を分離し、勤務枠単位で割当を管理できる構成にしました。
+                  案件作成、勤務枠設定、スタッフ割当、スタッフのシフト確認、勤務後の就労報告、月次集計までを
+                  一つの流れとして扱えるようにしました。
+                </p>
+              </div>
+
+              <div class="architecture-visual">
+                <img
+                  src="./images/workflow.png"
+                  alt="Shift Managerの業務フロー図"
+                />
+              </div>
+            </div>
+
+            <div class="architecture-visual-block">
+              <div class="visual-heading">
+                <span>Role Design</span>
+                <h3>管理者とスタッフで役割を分けた画面設計</h3>
+                <p>
+                  管理者は案件管理・スタッフ割当・就労報告確認・月次集計に集中できるようにし、
+                  スタッフは自分のシフト確認・勤務不可登録・就労報告に集中できるように画面を分けました。
+                </p>
+              </div>
+
+              <div class="architecture-visual">
+                <img
+                  src="./images/role-design.png"
+                  alt="管理者とスタッフの役割分担図"
+                />
+              </div>
+            </div>
+
+            <div class="design-points architecture-design-points">
+              <div class="design-point">
+                <h3>案件と勤務枠を分離</h3>
+                <p>
+                  案件情報と勤務時間帯を分けることで、1つの案件に複数の勤務枠を設定できるようにしました。
+                  同じ案件内でも、時間帯ごとに必要人数や担当スタッフを管理できます。
                 </p>
               </div>
 
               <div class="design-point">
-                <h3>管理者・スタッフの画面分離</h3>
+                <h3>勤務枠単位のスタッフ割当</h3>
                 <p>
-                  <!-- TODO: ロールごとの画面設計を書く -->
-                  管理者は全体管理、スタッフは自分の予定確認に集中できるように画面を分けました。
+                  スタッフの割当は案件全体ではなく、勤務枠単位で管理する設計にしました。
+                  これにより、必要人数に対する割当状況を確認しやすくし、人員不足の把握につなげています。
                 </p>
               </div>
 
               <div class="design-point">
-                <h3>Server Actionsでの処理</h3>
+                <h3>予定と実績を分けて管理</h3>
                 <p>
-                  <!-- TODO: Server Actions / 認可チェックについて書く -->
-                  登録・更新・削除などの処理はサーバー側で行い、権限確認もサーバー側で実施する設計にしました。
+                  ケータリングでは、当日の進行によって実際の就労時間が前後することがあります。
+                  そのため、予定としてのシフト割当と、勤務後に提出する就労報告を分けて管理できるようにしました。
                 </p>
               </div>
 
               <div class="design-point">
-                <h3>共通コンポーネント化</h3>
+                <h3>ロールごとの責務分離</h3>
                 <p>
-                  <!-- TODO: UI部品の共通化について書く -->
-                  ボタン、カード、ナビゲーション、フォーム部品などを共通化し、保守しやすい構成を意識しました。
+                  管理者とスタッフでは必要な情報や操作が異なるため、画面と権限を分けました。
+                  管理者向けの操作はサーバー側でも権限確認を行い、役割に応じた操作だけを実行できる構成にしています。
+                </p>
+              </div>
+
+              <div class="design-point">
+                <h3>入力負荷を減らすテンプレート設計</h3>
+                <p>
+                  繰り返し発生する案件の入力負荷を減らすため、案件テンプレートとテンプレート勤務枠を用意しました。
+                  よく使う現場、集合場所、服装、持ち物、勤務枠を再利用できるようにしています。
+                </p>
+              </div>
+
+              <div class="design-point">
+                <h3>保守しやすい構成</h3>
+                <p>
+                  ボタン、カード、ナビゲーション、フォーム部品などを共通化し、画面ごとの重複を減らしました。
+                  機能追加やデザイン修正を行いやすい構成を意識しています。
                 </p>
               </div>
             </div>
